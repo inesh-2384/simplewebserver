@@ -21,9 +21,46 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
+<html>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Company</th>
+            <th>Revenue</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Microsoft</td>
+            <td>$86.8</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Oracle</td>
+            <td>$37.1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>SAP</td>
+            <td>$20.9</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Symantec</td>
+            <td>$6.8</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>VMware</td>
+            <td>$5.2</td>
+        </tr>
+    </table>
+</html>
 
 
 ## OUTPUT:
+![image](https://github.com/inesh-2384/simplewebserver/assets/146412203/5b873048-4a3a-4da6-8cf4-533cb391d923)
+
+![image](https://github.com/inesh-2384/simplewebserver/assets/146412203/4e17ca32-1713-48b1-9b95-8fbd08244a03)
 
 
 ## RESULT:
