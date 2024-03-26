@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:
+## Date: 23/03/24
 
 ## AIM:
 To develop a simple webserver to serve html pages.
@@ -21,46 +21,79 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
+```
+from http.server import HTTPServer,BaseHTTPRequestHandler
+
+content='''
+<!doctype html>
 <html>
-    <table>
-        <tr>
-            <th>Rank</th>
-            <th>Company</th>
-            <th>Revenue</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Microsoft</td>
-            <td>$86.8</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Oracle</td>
-            <td>$37.1</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>SAP</td>
-            <td>$20.9</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Symantec</td>
-            <td>$6.8</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>VMware</td>
-            <td>$5.2</td>
-        </tr>
-    </table>
+<head>
+<title> My Web Server</title>
+</head>
+<body>
+<h1>Top Five Revenue from Companies</h1>
+<table border=2>
+<tr>
+<th> Company Name </th>
+<th> Revenue </th>
+<th> Financial Year </th>
+</tr>
+
+<tr>
+<td> Microsoft </td>
+<td> 86$ </td>
+<td> 2014 </td>
+</tr>
+
+<tr>
+<td> Oracle </td>
+<td> 37$ </td>
+<td> 2013 </td>
+</tr>
+
+<tr>
+<td> SAP </td>
+<td> 20$ </td>
+<td> 2013 </td>
+</tr>
+
+<tr>
+<td> VMware </td>
+<td> 5.2$ </td>
+<td> 2013 </td>
+</tr>
+
+<tr>
+<td> CA Technologies </td>
+<td> 4.7$ </td>
+<td> 2013 </td>
+</tr>
+
+</body>
 </html>
+'''
+
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
+        self.end_headers()
+        self.wfile.write(content.encode())
+
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
+httpd.serve_forever()
+
+
+```
 
 
 ## OUTPUT:
-![image](https://github.com/inesh-2384/simplewebserver/assets/146412203/5b873048-4a3a-4da6-8cf4-533cb391d923)
+![image](https://github.com/inesh-2384/simplewebserver/assets/146412203/5e72ed79-0a95-4494-88e6-c238aeb1a9b5)
 
-![image](https://github.com/inesh-2384/simplewebserver/assets/146412203/4e17ca32-1713-48b1-9b95-8fbd08244a03)
+![image](https://github.com/inesh-2384/simplewebserver/assets/146412203/cfec0645-69bc-48bb-9b7d-0ffac0d24267)
 
 
 ## RESULT:
